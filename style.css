@@ -1338,13 +1338,13 @@ video {
 
   font-weight: bold;
 
-  src: url("../public/font/NeueLeiden-Bold.otf");
+  src: url(".font/NeueLeiden-Bold.otf");
 }
 
 @font-face {
   font-family: "LEIDEN-REGULAR";
 
-  src: url("../public/font/NeueLeiden-Regular.otf");
+  src: url(".font/NeueLeiden-Regular.otf");
 }
 
 @font-face {
@@ -1352,13 +1352,13 @@ video {
 
   font-weight: bold;
 
-  src: url("../public/font/Article-bold.otf");
+  src: url(".font/Article-bold.otf");
 }
 
 @font-face {
   font-family: "ARTICLE";
 
-  src: url("../public/font/Article-regular.otf");
+  src: url(".font/Article-regular.otf");
 }
 
 @font-face {
@@ -1366,7 +1366,7 @@ video {
 
   font-weight: lighter;
 
-  src: url("../public/font/Article-light.otf");
+  src: url(".font/Article-light.otf");
 }
 
 .focus\:outline-none:focus {
