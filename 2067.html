@@ -6,6 +6,8 @@
     <title>2067 Vision | Artealogic</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/icon.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 </head>
 <body class="overflow-x-hidden font-article">
     <nav class="flex items-center justify-between px-4 py-2 text-white md:px-12 xl:px-16 bg-blue font-leiden">
@@ -18,7 +20,6 @@
             <a href="about.html">ABOUT</a>
             <a href="works.html">WORKS</a>
             <a href="perspective.html">PERSPECTIVE</a>
-            <a href="contacts.html">CONTACTS</a>
         </div>
 
         <div class="md:hidden" id="burger">
@@ -34,20 +35,19 @@
             <a href="about.html">ABOUT</a>
             <a href="works.html">WORKS</a>
             <a href="perspective.html">PERSPECTIVE</a>
-            <a href="contacts.html">CONTACTS</a>
         </div>
         <hr/>
     </div>
 
     <div class="px-4 mt-4 mb-20 md:mt-10 md:px-12 lg:px-16">
-        <button onclick="history.back()" class="mb-4">
+        <a href="works.html">
             <div class="flex items-center gap-2">
                 <img src="img/back.webp" alt="" class="w-2">
                 <h2 class="text-blue font-leidenRegular md:text-lg lg:text-xl">KEMBALI</h2>
             </div>
-        </button>
+        </a>
 
-        <img src="img/works/2067.webp" alt="" class="w-full">
+        <img src="img/works/2067.webp" alt="" class="w-full mt-4">
 
         <div class="grid grid-cols-1 gap-16 mt-4 md:mt-16 md:grid-cols-3">
             <div>
@@ -82,6 +82,37 @@
         </div>
     </div>
 
+    <div class="mx-4 mt-12 md:mx-8 lg:m-12">
+        <div class="flex justify-center mb-8 text-base lg:text-lg">
+            <h6>LIHAT LAINNYA</h6>
+        </div>
+
+        <div class="relative">
+            <div class="absolute z-10 -left-2 md:-left-4 lg:-left-6 slide-left top-1/2" style="transform: translate(0, -50%);">
+                <img src="img/carousel-arrow.webp" alt="" class="w-8 h-8 rotate-180 md:w-12 lg:w-16 md:h-12 lg:h-16">
+            </div>
+
+            <div class="slider">
+                <a href="mantra.html" class="">
+                    <img src="img/works/mantra.webp" alt="" class="object-cover w-full h-64 px-2 xl:h-80">
+                </a>
+                <a href="pas.html" class="">
+                    <img src="img/works/pas.webp" alt="" class="object-cover w-full h-64 px-2 xl:h-80">
+                </a>
+                <a href="rhomulus.html" class="">
+                    <img src="img/works/rhomulus-pink.webp" alt="" class="object-cover w-full h-64 px-2 xl:h-80">
+                </a>
+                <a href="herbates.html" class="">
+                    <img src="img/works/herbates2.webp" alt="" class="object-cover w-full h-64 px-2 xl:h-80">
+                </a>
+            </div>
+            
+            <div class="absolute z-10 -right-2 md:-right-4 lg:-right-6 slide-right top-1/2" style="transform: translate(0, -50%);">
+                <img src="img/carousel-arrow.webp" alt="" class="w-8 h-8 md:w-12 lg:w-16 md:h-12 lg:h-16">
+            </div>
+        </div>
+    </div>
+
     <img src="img/2067/2067-5.webp" alt="">
 
     <footer class="text-white bg-blue font-articleLight">
@@ -89,12 +120,11 @@
             <img src="img/logo-white.webp" alt="" class="w-40 md:w-52">
             
             <div class="flex grid-cols-2 gap-16 pt-8 md:grid md:gap-0">
-                <div class="flex items-end gap-0 md:gap-32">
+                <div class="flex items-center gap-0 md:gap-32">
                     <div class="flex-col hidden gap-4 md:flex">
                         <a href="about.html">About</a>
                         <a href="works.html">Works</a>
                         <a href="perspective.html">Perspective</a>
-                        <a href="contacts.html">Contacts</a>
                     </div>
 
                     <div class="flex flex-col gap-4">
@@ -122,5 +152,31 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                arrows: false,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }]
+            });
+            
+            $('.slide-left').click(function(){
+                $('.slider').slick('slickPrev');
+            });
+            
+            $('.slide-right').click(function(){
+                $('.slider').slick('slickNext');
+            });
+        });
+    </script>
 </body>
 </html>
